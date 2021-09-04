@@ -14,6 +14,7 @@ RUN apt-get update \
 WORKDIR /opt/webapp
 COPY Pipfile* /opt/webapp/
 
+RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir -q 'pipenv==2018.11.26' 
 RUN pipenv install --deploy --system
 COPY . /opt/webapp
